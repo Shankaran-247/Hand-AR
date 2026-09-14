@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HandAR | Hand Tracking Interface</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Grid -->
+    <div class="grid-background"></div>
+
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-mark">✦</span>
+            <span>Hand<span>AR</span></span>
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            SYSTEM READY
+        </div>
+
+        <button class="settings-btn">
+            ⚙
+        </button>
+
+    </header>
+
+
+    <!-- Main Interface -->
+    <main class="interface">
+
+
+        <!-- Left Information Panel -->
+        <aside class="left-panel">
+
+            <div class="panel-label">
+                HAND TRACKING
+            </div>
+
+            <h1>
+                Control<br>
+                <span>Reality.</span>
+            </h1>
+
+            <p class="description">
+                Interact with digital objects using natural
+                hand gestures.
+            </p>
+
+
+            <!-- Tracking Status -->
+            <div class="tracking-card">
+
+                <div class="card-header">
+                    <span>TRACKING STATUS</span>
+                    <span class="live">LIVE</span>
+                </div>
+
+                <div class="tracking-status">
+                    <div class="large-status-dot"></div>
+
+                    <div>
+                        <strong>Hand detected</strong>
+                        <small>Tracking confidence 94%</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Current Gesture -->
+            <div class="gesture-card">
+
+                <div class="card-header">
+                    <span>CURRENT GESTURE</span>
+                </div>
+
+                <div class="gesture-display">
+                    <div class="gesture-icon">
+                        🤏
+                    </div>
+
+                    <div>
+                        <strong>PINCH</strong>
+                        <small>Select / Move</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- AR Camera Area -->
+        <section class="ar-view">
+
+            <!-- Camera placeholder -->
+            <div class="camera-frame">
+
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+
+
+                <!-- Camera Message -->
+                <div class="camera-message">
+
+                    <div class="camera-icon">
+                        ◉
+                    </div>
+
+                    <h2>
+                        AR CAMERA
+                    </h2>
+
+                    <p>
+                        Camera feed will appear here
+                    </p>
+
+                    <button class="start-btn">
+                        START CAMERA
+                    </button>
+
+                </div>
+
+
+                <!-- Virtual AR Object -->
+                <div class="ar-object">
+
+                    <div class="cube-face front"></div>
+                    <div class="cube-face back"></div>
+
+                    <div class="cube-line line-1"></div>
+                    <div class="cube-line line-2"></div>
+                    <div class="cube-line line-3"></div>
+                    <div class="cube-line line-4"></div>
+
+                </div>
+
+
+                <!-- Object Label -->
+                <div class="object-label">
+
+                    <span class="selection-dot"></span>
+
+                    OBJECT_01
+
+                    <small>
+                        SELECTED
+                    </small>
+
+                </div>
+
+
+                <!-- Tracking Coordinates -->
+                <div class="coordinates">
+                    X: 428 &nbsp;&nbsp; Y: 316
+                </div>
+
+
+                <!-- Camera Controls -->
+                <div class="camera-controls">
+
+                    <button>−</button>
+                    <button>+</button>
+                    <button>⟳</button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Right Gesture Panel -->
+        <aside class="right-panel">
+
+            <div class="panel-label">
+                GESTURE CONTROLS
+            </div>
+
+
+            <div class="gesture-list">
+
+                <div class="gesture-item active">
+
+                    <div class="gesture-symbol">
+                        🤏
+                    </div>
+
+                    <div class="gesture-info">
+                        <strong>Pinch</strong>
+                        <span>Select / Move</span>
+                    </div>
+
+                    <div class="gesture-key">
+                        01
+                    </div>
+
+                </div>
+
+
+                <div class="gesture-item">
+
+                    <div class="gesture-symbol">
+                        ☝️
+                    </div>
+
+                    <div class="gesture-info">
+                        <strong>Point</strong>
+                        <span>Select Object</span>
+                    </div>
+
+                    <div class="gesture-key">
+                        02
+                    </div>
+
+                </div>
+
+
+                <div class="gesture-item">
+
+                    <div class="gesture-symbol">
+                        ✋
+                    </div>
+
+                    <div class="gesture-info">
+                        <strong>Open Palm</strong>
+                        <span>Pause</span>
+                    </div>
+
+                    <div class="gesture-key">
+                        03
+                    </div>
+
+                </div>
+
+
+                <div class="gesture-item">
+
+                    <div class="gesture-symbol">
+                        ✊
+                    </div>
+
+                    <div class="gesture-info">
+                        <strong>Fist</strong>
+                        <span>Reset</span>
+                    </div>
+
+                    <div class="gesture-key">
+                        04
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Interaction Guide -->
+            <div class="interaction-guide">
+
+                <div class="panel-label">
+                    QUICK GUIDE
+                </div>
+
+                <p>
+                    Place your hand inside the camera
+                    frame and use gestures to interact.
+                </p>
+
+                <div class="guide-line">
+                    <span>01</span>
+                    Detect hand
+                </div>
+
+                <div class="guide-line">
+                    <span>02</span>
+                    Perform gesture
+                </div>
+
+                <div class="guide-line">
+                    <span>03</span>
+                    Control object
+                </div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- Bottom Bar -->
+    <footer class="bottom-bar">
+
+        <div>
+            HANDAR ENGINE
+            <span>v1.0.0</span>
+        </div>
+
+        <div>
+            MEDIAPIPE
+            <span>CONNECTED</span>
+        </div>
+
+        <div>
+            CAMERA
+            <span>READY</span>
+        </div>
+
+        <div>
+            <button class="reset-btn">
+                RESET EXPERIENCE
+            </button>
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        const startButton =
+            document.querySelector(".start-btn");
+
+        startButton.addEventListener("click", () => {
+
+            startButton.innerText =
+                "CAMERA INITIALIZING...";
+
+            setTimeout(() => {
+
+                startButton.innerText =
+                    "CAMERA ACTIVE";
+
+            }, 1500);
+
+        });
+
+    </script>
+
+</body>
+</html>

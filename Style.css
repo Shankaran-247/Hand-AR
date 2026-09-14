@@ -1,0 +1,1076 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --background: #08090b;
+    --panel: #101216;
+    --panel-light: #15181d;
+
+    --border: #252a31;
+
+    --text: #f1f3f5;
+    --muted: #858b94;
+
+    --accent: #b8ff3d;
+    --accent-dark: #83c51e;
+
+    --danger: #ff5c5c;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   BACKGROUND GRID
+========================= */
+
+.grid-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.15;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,0.05) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.05) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 32px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(8,9,11,0.9);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+
+.logo span span {
+
+    color: var(--accent);
+}
+
+
+.logo-mark {
+
+    color: var(--accent);
+
+    font-size: 22px;
+}
+
+
+.nav-status {
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--muted);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.status-dot,
+.large-status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 12px var(--accent);
+}
+
+
+.settings-btn {
+
+    width: 36px;
+
+    height: 36px;
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    border-radius: 6px;
+}
+
+
+/* =========================
+   MAIN INTERFACE
+========================= */
+
+.interface {
+
+    height: calc(100vh - 120px);
+
+    display: grid;
+
+    grid-template-columns:
+        280px
+        1fr
+        280px;
+
+    gap: 0;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   PANELS
+========================= */
+
+.left-panel,
+.right-panel {
+
+    padding: 30px 24px;
+
+    background:
+        rgba(12,14,17,0.85);
+
+    border-right: 1px solid var(--border);
+
+    overflow-y: auto;
+}
+
+
+.right-panel {
+
+    border-right: none;
+
+    border-left: 1px solid var(--border);
+}
+
+
+.panel-label {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--muted);
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   LEFT PANEL
+========================= */
+
+.left-panel h1 {
+
+    font-size: 38px;
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+}
+
+
+.left-panel h1 span {
+
+    color: var(--accent);
+}
+
+
+.description {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.tracking-card,
+.gesture-card {
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+}
+
+
+.card-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--muted);
+
+    margin-bottom: 18px;
+}
+
+
+.live {
+
+    color: var(--accent);
+}
+
+
+.tracking-status,
+.gesture-display {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.tracking-status strong,
+.gesture-display strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+
+.tracking-status small,
+.gesture-display small {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: var(--muted);
+}
+
+
+.large-status-dot {
+
+    width: 12px;
+
+    height: 12px;
+}
+
+
+.gesture-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--panel-light);
+
+    border: 1px solid var(--border);
+
+    font-size: 21px;
+}
+
+
+/* =========================
+   AR VIEW
+========================= */
+
+.ar-view {
+
+    padding: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #060709;
+}
+
+
+.camera-frame {
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: 1000px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #30353c;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #181b20 0%,
+            #08090b 65%
+        );
+}
+
+
+/* =========================
+   CAMERA MESSAGE
+========================= */
+
+.camera-message {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    z-index: 1;
+}
+
+
+.camera-icon {
+
+    font-size: 30px;
+
+    color: var(--accent);
+
+    margin-bottom: 14px;
+}
+
+
+.camera-message h2 {
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+
+.camera-message p {
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+    margin-bottom: 20px;
+}
+
+
+.start-btn {
+
+    background: var(--accent);
+
+    color: #090b08;
+
+    border: none;
+
+    padding: 12px 18px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.start-btn:hover {
+
+    background: #d0ff78;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CORNER MARKERS
+========================= */
+
+.corner {
+
+    position: absolute;
+
+    width: 25px;
+
+    height: 25px;
+
+    border-color: var(--accent);
+
+    z-index: 4;
+}
+
+
+.top-left {
+
+    top: 18px;
+    left: 18px;
+
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+
+.top-right {
+
+    top: 18px;
+    right: 18px;
+
+    border-top: 2px solid;
+    border-right: 2px solid;
+}
+
+
+.bottom-left {
+
+    bottom: 18px;
+    left: 18px;
+
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+}
+
+
+.bottom-right {
+
+    bottom: 18px;
+    right: 18px;
+
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+}
+
+
+/* =========================
+   AR CUBE
+========================= */
+
+.ar-object {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 110px;
+
+    height: 110px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(10deg);
+
+    border: 2px solid var(--accent);
+
+    box-shadow:
+        0 0 30px rgba(184,255,61,0.15);
+
+    z-index: 3;
+}
+
+
+.ar-object::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+
+    height: 110px;
+
+    border: 2px solid var(--accent);
+
+    top: -22px;
+
+    left: 22px;
+}
+
+
+.ar-object::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    border: 1px dashed
+        rgba(184,255,61,0.4);
+}
+
+
+/* =========================
+   CUBE LINES
+========================= */
+
+.cube-line {
+
+    position: absolute;
+
+    width: 31px;
+
+    height: 2px;
+
+    background: var(--accent);
+
+    transform-origin: left center;
+}
+
+
+.line-1 {
+
+    top: 0;
+
+    left: 0;
+
+    transform:
+        rotate(-45deg)
+        translateX(0);
+}
+
+
+.line-2 {
+
+    top: 0;
+
+    right: -20px;
+
+    transform: rotate(-45deg);
+}
+
+
+.line-3 {
+
+    bottom: 0;
+
+    left: 0;
+
+    transform: rotate(-45deg);
+}
+
+
+.line-4 {
+
+    bottom: 0;
+
+    right: -20px;
+
+    transform: rotate(-45deg);
+}
+
+
+/* =========================
+   OBJECT LABEL
+========================= */
+
+.object-label {
+
+    position: absolute;
+
+    top: calc(50% + 85px);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--accent);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.object-label small {
+
+    color: var(--muted);
+
+    margin-left: 5px;
+}
+
+
+.selection-dot {
+
+    width: 5px;
+
+    height: 5px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   COORDINATES
+========================= */
+
+.coordinates {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    font-size: 9px;
+
+    color: var(--muted);
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   CAMERA CONTROLS
+========================= */
+
+.camera-controls {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 22px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 5px;
+}
+
+
+.camera-controls button {
+
+    width: 32px;
+
+    height: 32px;
+
+    background: rgba(10,11,13,0.9);
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RIGHT PANEL
+========================= */
+
+.gesture-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.gesture-item {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    background: var(--panel);
+
+    transition: 0.2s;
+}
+
+
+.gesture-item.active {
+
+    border-color: var(--accent);
+
+    background:
+        rgba(184,255,61,0.05);
+}
+
+
+.gesture-symbol {
+
+    width: 35px;
+
+    font-size: 18px;
+}
+
+
+.gesture-info {
+
+    flex: 1;
+}
+
+
+.gesture-info strong {
+
+    display: block;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+
+.gesture-info span {
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+.gesture-key {
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   QUICK GUIDE
+========================= */
+
+.interaction-guide {
+
+    margin-top: 40px;
+
+    border-top: 1px solid var(--border);
+
+    padding-top: 25px;
+}
+
+
+.interaction-guide p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+.guide-line {
+
+    display: flex;
+
+    gap: 12px;
+
+    font-size: 10px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    color: #b6bbc2;
+}
+
+
+.guide-line span {
+
+    color: var(--accent);
+
+    font-family: monospace;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.bottom-bar {
+
+    height: 50px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: var(--muted);
+
+    position: relative;
+
+    z-index: 10;
+
+    background: #090a0c;
+}
+
+
+.bottom-bar span {
+
+    color: var(--accent);
+
+    margin-left: 8px;
+}
+
+
+.reset-btn {
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    padding: 7px 12px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .interface {
+
+        grid-template-columns:
+            220px
+            1fr
+            220px;
+    }
+
+    .left-panel h1 {
+
+        font-size: 30px;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    body {
+
+        overflow: auto;
+    }
+
+
+    .interface {
+
+        height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+
+    .left-panel,
+    .right-panel {
+
+        border: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+
+    .ar-view {
+
+        min-height: 600px;
+
+        order: -1;
+    }
+
+
+    .camera-frame {
+
+        height: 550px;
+    }
+
+
+    .bottom-bar {
+
+        height: auto;
+
+        padding: 15px;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+
+        padding: 0 18px;
+    }
+
+
+    .nav-status {
+
+        display: none;
+    }
+
+
+    .ar-view {
+
+        padding: 12px;
+    }
+
+
+    .camera-frame {
+
+        height: 500px;
+    }
+
+}
